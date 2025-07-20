@@ -24,7 +24,7 @@ html, body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
@@ -210,6 +210,7 @@ html, body {
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  width: 100%;
 }
 
 /* Current Track Section */
@@ -395,6 +396,8 @@ html, body {
   display: flex;
   gap: 15px;
   margin: 20px 0;
+  justify-content: center;
+  width: 100%;
 }
 
 .action-button {
@@ -434,7 +437,9 @@ html, body {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
+  width: 100%;
+  align-self: flex-start;
 }
 
 /* Playlist Container */
@@ -443,7 +448,7 @@ html, body {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .playlist-item {
