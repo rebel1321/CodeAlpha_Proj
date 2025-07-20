@@ -1,0 +1,308 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Night Mode Styles */
+body.night-mode {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+body.night-mode .calculator-wrapper {
+    background: rgba(45, 52, 54, 0.95);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+body.night-mode .input {
+    background: rgba(0, 0, 0, 0.3);
+    color: #ecf0f1;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+body.night-mode button {
+    background: rgba(52, 73, 94, 0.8);
+    color: #ecf0f1;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+body.night-mode button:hover {
+    background: rgba(52, 73, 94, 1);
+    transform: translateY(-2px);
+}
+
+body.night-mode button.special {
+    background: rgba(41, 128, 185, 0.8);
+}
+
+body.night-mode button.special:hover {
+    background: rgba(41, 128, 185, 1);
+}
+
+body.night-mode button.equal {
+    background: rgba(231, 76, 60, 0.8);
+}
+
+body.night-mode button.equal:hover {
+    background: rgba(231, 76, 60, 1);
+}
+
+/* Main Container */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Night Mode Toggle Button */
+.Night-Mode {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    color: #2c3e50;
+}
+
+.Night-Mode:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.night-mode .Night-Mode {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ecf0f1;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.night-mode .Night-Mode:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Calculator Wrapper */
+.calculator-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Display Container */
+.display-container {
+    margin-bottom: 25px;
+}
+
+.input {
+    width: 100%;
+    height: 80px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: right;
+    padding: 0 20px;
+    border: 2px solid #e0e6ed;
+    border-radius: 15px;
+    background: rgba(248, 249, 250, 0.8);
+    color: #2c3e50;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+/* Button Container */
+.base-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Button Styles */
+button {
+    height: 65px;
+    border: 2px solid #e0e6ed;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    color: #2c3e50;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: #bdc3c7;
+}
+
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Special Buttons (Operations and Functions) */
+button.special {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border-color: #2980b9;
+    font-weight: 700;
+}
+
+button.special:hover {
+    background: linear-gradient(135deg, #2980b9, #1f5f8f);
+    box-shadow: 0 8px 25px rgba(41, 128, 185, 0.3);
+}
+
+/* Equal Button */
+button.equal {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border-color: #c0392b;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+button.equal:hover {
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+}
+
+/* Number Buttons */
+button:not(.special):not(.equal):not(.Night-Mode) {
+    background: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+button:not(.special):not(.equal):not(.Night-Mode):hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .calculator-wrapper {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .input {
+        height: 70px;
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    button {
+        height: 55px;
+        font-size: 1.2rem;
+    }
+    
+    .base-container {
+        gap: 12px;
+    }
+    
+    .Night-Mode {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .input {
+        font-size: 1.8rem;
+    }
+    
+    button {
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    .base-container {
+        gap: 10px;
+    }
+}
+
+/* Accessibility */
+button:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Animation for calculator appearance */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.calculator-wrapper {
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Hover effect for the entire calculator */
+.calculator-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+body.night-mode .calculator-wrapper:hover {
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+}
