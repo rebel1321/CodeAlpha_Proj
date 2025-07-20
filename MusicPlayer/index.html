@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicStream</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Spline+Sans:wght@400;500;700"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="design-root">
+      <div class="layout-container">
+        <header class="main-header">
+          <div class="header-left">
+            <div class="logo-container">
+              <div class="logo-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <h2 class="site-title">MusicStream</h2>
+            </div>
+            <nav class="main-nav">
+
+            </nav>
+          </div>
+          <div class="header-right">
+            <label class="search-label">
+              <div class="search-input-wrapper">
+                <div class="search-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <input placeholder="Search" class="search-input" value="" />
+              </div>
+            </label>
+            <div class="header-buttons">
+              <button class="icon-button">
+                <div class="button-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button class="icon-button" id="profileButton">
+                <div class="button-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <div class="profile-modal" id="profileModal">
+                <div class="profile-content">
+                  <p class="profile-name">Satyam</p>
+                  <p class="profile-email">satyam.@musicstream.com</p>
+                  <p class="profile-bio">Passionate music lover and audiophile.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="content-wrapper">
+          <div class="layout-content-container">
+            <div class="current-track-section">
+              <div class="cover-art-container" id="currentCoverArt"></div>
+              <div class="track-info text-center">
+                <p class="track-title" id="currentTrackTitle">Electric Dreams</p>
+                <p class="track-artist" id="currentTrackArtist">Neon Nights</p>
+              </div>
+              <div class="playback-progress">
+                <div class="progress-bar-container" id="progressBarContainer">
+                  <div class="progress-bar" id="progressBar"></div>
+                  <div class="progress-thumb" id="progressThumb"></div>
+                </div>
+                <div class="time-display">
+                  <p class="current-time" id="currentTime">0:00</p>
+                  <p class="duration-time" id="durationTime">0:00</p>
+                </div>
+              </div>
+              <div class="player-controls">
+                <button class="player-button" id="prevTrackButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z"></path>
+                  </svg>
+                </button>
+                <button class="player-button" id="rewindButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M232,71.84V184.16a15.92,15.92,0,0,1-24.48,13.34L128,146.86v37.3a15.92,15.92,0,0,1-24.48,13.34L15.33,141.34a15.8,15.8,0,0,1,0-26.68L103.52,58.5A15.91,15.91,0,0,1,128,71.84v37.3L207.52,58.5A15.91,15.91,0,0,1,232,71.84Z"
+                    ></path>
+                  </svg>
+                </button>
+                <button class="play-pause-button" id="playPauseButton">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32px"
+                    height="32px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    id="playIcon"
+                  >
+                    <path
+                      d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"
+                    ></path>
+                  </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32px"
+                    height="32px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    id="pauseIcon"
+                    style="display: none"
+                  >
+                    <path d="M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,48V208a16,16,0,0,1-16,16H40A16,16,0,0,1,24,208V48A16,16,0,0,1,40,32H80A16,16,0,0,1,96,48Z"></path>
+                  </svg>
+                </button>
+                <button class="player-button" id="fastForwardButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M248,128a15.76,15.76,0,0,1-7.33,13.34L152.48,197.5A15.91,15.91,0,0,1,128,184.16v-37.3L48.48,197.5A15.91,15.91,0,0,1,24,184.16V71.84A15.91,15.91,0,0,1,48.48,58.5L128,109.14V71.84A15.91,15.91,0,0,1,152.48,58.5l88.19,56.16A15.76,15.76,0,0,1,248,128Z"
+                    ></path>
+                  </svg>
+                </button>
+                <button class="player-button" id="nextTrackButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M208,40V216a8,8,0,0,1-16,0V146.77L72.43,221.55A15.95,15.95,0,0,1,48,208.12V47.88A15.95,15.95,0,0,1,72.43,34.45L192,109.23V40a8,8,0,0,1,16,0Z"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="volume-control">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M151.75,39.41a8,8,0,0,0-8.72,1.73L79.11,96H32a16,16,0,0,0-16,16v32a16,16,0,0,0,16,16H79.11l63.92,54.86A8,8,0,0,0,152,216V40A8,8,0,0,0,151.75,39.41ZM48,112H80a8,8,0,0,0,8,8v16a8,8,0,0,0-8,8H48ZM168,100v56a8,8,0,0,1-16,0V100a8,8,0,0,1,16,0Zm48,8a8,8,0,0,0-8-8,8,8,0,0,1-16,0,8,8,0,0,0-8,8v40a8,8,0,0,0,8,8,8,8,0,0,1,16,0,8,8,0,0,0,8-8Z"></path>
+                </svg>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.75" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                  height="20px"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M151.75,39.41a8,8,0,0,0-8.72,1.73L79.11,96H32a16,16,0,0,0-16,16v32a16,16,0,0,0,16,16H79.11l63.92,54.86A8,8,0,0,0,152,216V40A8,8,0,0,0,151.75,39.41ZM48,112H80a8,8,0,0,0,8,8v16a8,8,0,0,0-8,8H48ZM176,176v-96a8,8,0,0,0-16,0v96a8,8,0,0,0,16,0ZM224,192V64a8,8,0,0,0-16,0V192a8,8,0,0,0,16,0Z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="action-buttons">
+              <button class="action-button primary">
+                <span class="truncate">Add to Playlist</span>
+              </button>
+              <button class="action-button secondary">
+                <span class="truncate">Shuffle</span>
+              </button>
+            </div>
+            <h2 class="section-title">Up Next</h2>
+            <div class="playlist-container" id="playlistContainer">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="audioPlayer" src=""></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

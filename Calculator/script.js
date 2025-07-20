@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll(".base-container button");
 const input = document.querySelector(".input");
-const body = document.body;
+const main = document.querySelector(".main");
 const night = document.querySelector(".Night-Mode");
 const operators = ['+', '-', '*', '/','%','.'];
 // Convert NodeList to Array
@@ -10,8 +10,8 @@ let expression = "";
 
 // Toggle night mode
 night.addEventListener("click", () => {
-  body.classList.toggle("night-mode");
-  if (body.classList.contains("night-mode")) {
+  main.classList.toggle("nightTheme");
+  if (main.classList.contains("nightTheme")) {
     night.textContent = "🌤️Switch to Day Mode";
   } else {
     night.textContent = "🌠Switch to Night Mode";
